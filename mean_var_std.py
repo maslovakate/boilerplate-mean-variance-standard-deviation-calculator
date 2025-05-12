@@ -11,40 +11,35 @@ def calculate(lst):
     # Calculate statistics for rows (axis=1), columns (axis=0), and flattened array
     result = {
         'mean': [
-            np.mean(arr, axis=1).tolist(),  # Row means
-            np.mean(arr, axis=0).tolist(),  # Column means
+            np.mean(arr, axis=1).tolist(),  # Row means (axis1)
+            np.mean(arr, axis=0).tolist(),  # Column means (axis2)
             float(np.mean(arr))             # Flattened mean
         ],
         'variance': [
-            np.var(arr, axis=1).tolist(),   # Row variances
-            np.var(arr, axis=0).tolist(),   # Column variances
+            np.var(arr, axis=1).tolist(),   # Row variances (axis1)
+            np.var(arr, axis=0).tolist(),   # Column variances (axis2)
             float(np.var(arr))              # Flattened variance
         ],
         'standard deviation': [
-            np.std(arr, axis=1).tolist(),   # Row standard deviations
-            np.std(arr, axis=0).tolist(),   # Column standard deviations
+            np.std(arr, axis=1).tolist(),   # Row standard deviations (axis1)
+            np.std(arr, axis=0).tolist(),   # Column standard deviations (axis2)
             float(np.std(arr))              # Flattened standard deviation
         ],
         'max': [
-            np.max(arr, axis=1).tolist(),   # Row max
-            np.max(arr, axis=0).tolist(),   # Column max
+            np.max(arr, axis=1).tolist(),   # Row max (axis1)
+            np.max(arr, axis=0).tolist(),   # Column max (axis2)
             int(np.max(arr))                # Flattened max
         ],
         'min': [
-            np.min(arr, axis=1).tolist(),   # Row min
-            np.min(arr, axis=0).tolist(),   # Column min
+            np.min(arr, axis=1).tolist(),   # Row min (axis1)
+            np.min(arr, axis=0).tolist(),   # Column min (axis2)
             int(np.min(arr))                # Flattened min
         ],
         'sum': [
-            np.sum(arr, axis=1).tolist(),   # Row sums
-            np.sum(arr, axis=0).tolist(),   # Column sums
+            np.sum(arr, axis=1).tolist(),   # Row sums (axis1)
+            np.sum(arr, axis=0).tolist(),   # Column sums (axis2)
             int(np.sum(arr))                # Flattened sum
         ]
     }
     
     return result
-
-# Example usage
-input_list = [0, 1, 2, 3, 4, 5, 6, 7, 8]
-result = calculate(input_list)
-print(result)
